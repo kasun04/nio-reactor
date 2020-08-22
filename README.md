@@ -14,7 +14,7 @@ Hence, to cater to such requirements, there can be several possibilities in the 
 
 The readiness selection approach was originally presented as an object behavioral pattern by Schmidt [1] under ‘Reactor: An Object Behavioral Pattern for Demultiplexing and Dispatching Handles for Synchronous Events’ paper. Therefore, in order to understand the readiness selection better, we need to take a closer look at the Reactor pattern.
 
-Reactor Pattern
+## Reactor Pattern
 
 The reactor design pattern was introduced as a general architecture to implement event-driven systems. In order to solve our original problem of implementing a server application that can handle thousands of simultaneous client connections, Reactor pattern provides a way in which we can listen to the events (incoming connections/requests) with a synchronous demultiplexing strategy, so that when an incoming event occurs, it is dispatched to a service provider (handler) that can handle this event.
 Let's have a detailed look at each key participants in Reactor pattern, which are depicted in the following class diagram.
