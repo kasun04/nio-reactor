@@ -8,9 +8,9 @@ Handling high latency connections
 - Minimize latency, maximize throughput and avoiding unnecessary CPU cycles. 
 
 Hence, to cater to such requirements, there can be several possibilities in the server application architecture.
-- Having a pool of sockets for each client, and periodically polling them: This is the most straightforward approach; however, it is more or less impractical without non-blocking sockets. This is extremely inefficient and never scales with the increasing number of connections.
-- Thread per socket: This is the conventional approach and was initially used in some applications and this is the only practical solution with blocking sockets. Having thread per each client connection has several drawbacks, such as a large amount of overhead with the thread scheduling. Another flaw in this approach is that as the number of connections/client increases, we need to increase the number of threads as well. Therefore, this too hardly scales.
-- Readiness selection: It is the ability to choose a socket that will not block when read or written. This is a very efficient way of handling thousands of concurrent clients and scales well.
+- **Having a pool of sockets for each client, and periodically polling them**: This is the most straightforward approach; however, it is more or less impractical without non-blocking sockets. This is extremely inefficient and never scales with the increasing number of connections.
+- **Thread per socket**: This is the conventional approach and was initially used in some applications and this is the only practical solution with blocking sockets. Having thread per each client connection has several drawbacks, such as a large amount of overhead with the thread scheduling. Another flaw in this approach is that as the number of connections/client increases, we need to increase the number of threads as well. Therefore, this too hardly scales.
+- **Readiness selection**: It is the ability to choose a socket that will not block when read or written. This is a very efficient way of handling thousands of concurrent clients and scales well.
 
 The readiness selection approach was originally presented as an object behavioral pattern by under [‘Reactor: An Object Behavioral Pattern for Demultiplexing and Dispatching Handles for Synchronous Events’](http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf) paper. Therefore, in order to understand the readiness selection better, we need to take a closer look at the Reactor pattern.
 
