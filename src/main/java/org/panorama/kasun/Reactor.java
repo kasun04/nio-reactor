@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 
+/* This is the Initiation Dispatcher or the Reactor */
 public class Reactor {
     private Map<Integer, EventHandler> registeredHandlers = new ConcurrentHashMap<Integer, EventHandler>();
     private Selector demultiplexer;
@@ -33,7 +34,8 @@ public class Reactor {
 
     public void run() {
         try {
-            while (true) { // Loop indefinitely
+            // Loop indefinitely
+            while (true) {
                 demultiplexer.select();
 
                 Set<SelectionKey> readyHandles =

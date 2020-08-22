@@ -21,7 +21,7 @@ public class Client {
 
         //BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         //sentence = inFromUser.readLine();
-        outToServer.writeBytes("Hello ..." + '\n');
+        outToServer.writeBytes("Hello NIO Server!" + '\n');
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         sentence = inFromServer.readLine();
         System.out.println("Response from Server : " + sentence);

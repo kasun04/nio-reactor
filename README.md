@@ -16,8 +16,9 @@ The readiness selection approach was originally presented as an object behaviora
 
 ## Reactor Pattern
 
-The reactor design pattern was introduced as a general architecture to implement event-driven systems. In order to solve our original problem of implementing a server application that can handle thousands of simultaneous client connections, Reactor pattern provides a way in which we can listen to the events (incoming connections/requests) with a synchronous demultiplexing strategy, so that when an incoming event occurs, it is dispatched to a service provider (handler) that can handle this event.
-Let's have a detailed look at each key participants in Reactor pattern, which are depicted in the following class diagram.
+The reactor design pattern was introduced as a general architecture to implement event-driven systems. To solve our original problem of implementing a server application that can handle thousands of simultaneous client connections, Reactor pattern provides a way in which we can listen to the events (incoming connections/requests) with a synchronous demultiplexing strategy so that when an incoming event occurs, it is dispatched to a service provider (handler) that can handle this event.
+
+Let's have a detailed look at each key participant in the Reactor pattern, which is depicted in the following class diagram. 
 
 ![Reactor Pattern](https://wso2.com/files/ESB_1.png)
 
@@ -245,3 +246,8 @@ public class Reactor {
 ``` 
 
 Handle is represented from SlectionKey and Event are represented with SelectionKey.OP_ACCEPT, SelectionKey.OP_READ, SelectionKey.OP_WRITE etc.
+
+
+### References 
+- This content is originally published in my [blog](http://kasunpanorama.blogspot.com/2015/04/understanding-reactor-pattern-with-java.html) back in April 2015. 
+- [Scalable IO in Java](http://gee.cs.oswego.edu/dl/cpjslides/nio.pdf) by Doug Lea 
